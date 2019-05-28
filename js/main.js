@@ -1,12 +1,17 @@
 window.onload = function(){
+
+    //SETTING STATIC HEADER HEIGHT
     var header = document.querySelector('header');
     var heightCalc = Math.floor((window.innerHeight / 100) * 90)
     header.style.height = heightCalc + 'px';
+
+    //LOADER
     var loader = document.getElementById('loader');
     loader.style.transform = 'translateX(100%)';
     setTimeout(()=>{
         loader.style.display = 'none';
     },600);
+
     //NAV BACKGROUND
     if(document.documentElement.scrollTop > 0 || document.body.scrollTop > 0){
         navBG();
@@ -43,17 +48,7 @@ window.onload = function(){
         isToggle = !isToggle;
     }
 
-    // var scrollers = document.getElementsByClassName('scroller');
-    // for(var i = 0; i < scrollers.length;i++){
-    //     scrollers[i].addEventListener('click',scrollToSection);
-    // }
-
-    // function scrollToSection(e){
-    //     const section = this.getAttribute('data-section')
-    //     const scrolldistance  = document.getElementById(section).scrollHeight + 500;
-    //     console.log(scrolldistance);
-    //     window.scrollTo(0,scrolldistance)
-    // }
+    //ANCHOR TAG SCROLL
     $(".scroller").click(function(){
         var section = '#' + this.getAttribute('data-section');
         console.log(section);
@@ -62,4 +57,5 @@ window.onload = function(){
         },500);
         return false;
     });
+
 }
