@@ -1,16 +1,9 @@
-window.onload = function(){
+
 
     //SETTING STATIC HEADER HEIGHT
     var header = document.querySelector('header');
     var heightCalc = Math.floor((window.innerHeight / 100) * 90)
     header.style.height = heightCalc + 'px';
-
-    //LOADER
-    var loader = document.getElementById('loader');
-    loader.style.transform = 'translateX(100%)';
-    setTimeout(()=>{
-        loader.style.display = 'none';
-    },600);
 
     //NAV BACKGROUND
     if(document.documentElement.scrollTop > 0 || document.body.scrollTop > 0){
@@ -58,4 +51,3 @@ window.onload = function(){
         return false;
     });
 
-}
